@@ -22,7 +22,7 @@ Please note these important points:
 
 *  **As with all human-labeled data, we do find noise, artifacts, and potential mistakes in the ground truth.**
 
-* **** Identical images do exist in the dataset. Revealed in EDA.****
+*  **Identical images do exist in the dataset. Revealed in EDA.**
 
 *  **Dataset uses run-length encoding (RLE) on the pixel values.**
 
