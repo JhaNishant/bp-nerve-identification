@@ -64,6 +64,50 @@ We have seperated the run-length from pixel location, removed NaN data (where th
 8. Target pixel location histogram - 40 , 80 , 160 , 320 bins
 
 
+** Gaussian 2D Layer **
+
+Instead of predicting per-pixel mask if I predict only 6 numbers mu_x, mu_y, sigma_x, sigma_y, sigma_xy, scale that will define a 2d gaussian. Thus, instead of autoencoder-like networks I can use simple CNNs.
+
+Does not improve performance. Different way of approaching this problem.
+
+** Long submission **
+
+We spent the most amount of time doing this. 
+
+
+1.   Used Maxout activations
+2.   The models output both a mask and a probability that the image contains a mask
+3.   Use some additional "auxiliary" downsampled mask to train the models
+4.   PCA post-processing to get "realistic" masks
+5.   Binary cross-entropy performs better than dice-like loss
+
+
+I decided to use some deep learning as it works so well on images. We used multiple architectures to try out and all were fully-connected CNN or U-net.
+
+Pre-processing stage - 
+
+Image scaling - The images have a size of 580x420. Caused memory overflow while training. Rescaled images to 128x128.This also mean I stretched the images (the scale factor isn’t the same for both axes), but this didn’t seem to hinder performances much.
+
+Removing contradictory images - I decided to remove the training images without a mask that were close to another training image with a mask. I computed the similary between two images by computing a signature for each image as follow : I divided the image in small 20x20 blocks and then compute a histogram of intensity in each block. All the histograms for the image are then concatenated into a big vector.This results in a distance matrix for all the training set images, which is then thresholded to decide which images should be removed. In the end, I kept 3906 training images (out of the 5500).
+
+Architecture - The model has 95000 parameters. I found difficult to train models with more parameters without overfitting and I got really good results with 50000 parameter models as well.I used some very simple data augmentation (small rotation, zoom, shear and translation). 
+
+Post-processing stage - 
+
+I tried three different post-processing approaches :
+
+
+*  Morphological close to remove small holes. This helped a bit
+
+*  Fitting an ellipse to the mask and filling the ellipse (since the mask are often somewhat ellipse-like). This didn't help and even sometimes decreased the performance.
+
+*  Using a PCA decomposition of the training masks and reconstruct the predicted mask using a limited number of principal components. This seemed to help more consistently (although just a little bit).
+
+PCA cleaning - The idea of using PCA to post-process came from the Eigenface concept. Basically, you consider your image as a big vector and you then do PCA on the training masks to learn “eigenmasks”.
+
+To clean a predicted mask using this method, you project the cleaned mask on the subspace found by PCA and you then reconstruct using only the 20 (in my case) first principal components. This forces the reconstructed mask to have a shape similar to the training masks.
+
+Loss and mask percentage - I tried using dice coefficient as a loss, but I always got better results by using binary cross-entropy. Lowering the thresholds to get higher number of predicted masks leads to too many false positive.So 49% of the images should have mask and I tried to optimize the threshold on the binary and mask output to get close to 49% predicted masks. 
 
 
 
