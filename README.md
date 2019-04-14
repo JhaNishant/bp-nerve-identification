@@ -1,4 +1,4 @@
-# Eliminating surgical pain
+# Eliminate narcotics through intelligent ultrasound
 
 Surgery is not easy for everyone. It brings discomfort and often involves significant post-surgical pain.
 
