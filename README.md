@@ -26,6 +26,8 @@ Important points about dataset:
 
 *  **Dataset uses run-length encoding (RLE) on the pixel values.**
 
+*  **The dataset consists of 5635 training images and their masks, and 5508 testing images. **
+
 
 About the data-
 
@@ -38,6 +40,26 @@ About the data-
 
 
 **Approaches we've tried so far**- 
+
+Exploratory Data Analysis - All our training data is in one column, titled pixels.
+
+train_masks.csv gives the training image masks in run-length encoded format. So, we need to segment this data into something we can plot!
+
+Steps - 
+
+1.  Separate run-lengths and pixel locations into seperate lists
+2.  Get number of data points in each image
+3.  Get all absolute target values
+4.  Remove NaNs
+
+We have seperated the run-length from pixel location, removed NaN data (where there is no data) and also got the number of data points in each image.Now we can plot some graphs!
+
+5. Image analysis
+6. Convert pixel values in the training data into X and Y positions on the photos so that we can see the most common positions.
+7. Get dimensions of the images
+8. Target pixel location histogram - 40 , 80 , 160 , 320 bins
+
+
 
 
 
