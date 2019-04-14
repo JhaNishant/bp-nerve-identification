@@ -41,7 +41,11 @@ About the data-
 
 **Approaches we've tried so far**- 
 
-**Exploratory Data Analysis** - All our training data is in one column, titled pixels.
+**Exploratory Data Analysis** 
+
+It is a good practice to understand the data first and try to gather as many insights from it. EDA is all about making sense of data in hand before getting into it.
+
+All our training data is in one column, titled pixels.
 
 train_masks.csv gives the training image masks in run-length encoded format. So, we need to segment this data into something we can plot!
 
