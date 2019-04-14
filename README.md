@@ -93,7 +93,7 @@ I decided to use some deep learning as it works so well on images. We used multi
 *  Removing contradictory images - I decided to remove the training images without a mask that were close to another training image with a mask. I computed the similary between two images by computing a signature for each image as follow : I divided the image in small 20x20 blocks and then compute a histogram of intensity in each block. All the histograms for the image are then concatenated into a big vector.This results in a distance matrix for all the training set images, which is then thresholded to decide which images should be removed. In the end, I kept 3906 training images (out of the 5500).
 
 
-*  Architecture - The model has 95000 parameters. I found difficult to train models with more parameters without overfitting and I got really good results with 50000 parameter models as well.I used some very simple data augmentation (small rotation, zoom, shear and translation). 
+*  Architecture - The model has 95000 parameters. I found difficult to train models with more parameters without overfitting and I got really good results with 50000 parameter models as well.I used some very simple data augmentation (small rotation, zoom, shear and translation) but it did not help performance. 
 
 **Post-processing stage**
 
