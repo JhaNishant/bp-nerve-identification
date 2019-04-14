@@ -26,7 +26,7 @@ Important points about dataset:
 
 *  **Dataset uses run-length encoding (RLE) on the pixel values.**
 
-*  **The dataset consists of 5635 training images and their masks, and 5508 testing images. **
+*  **The dataset consists of 5635 training images and their masks, and 5508 testing images**
 
 
 About the data-
