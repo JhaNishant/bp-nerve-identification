@@ -18,13 +18,13 @@ Dataset - A large training set of images where the nerve has been manually attri
 Please note these important points:
 
 
-*  The dataset contains images where the BP is not present. Our algorithm predicts no pixel values in these cases.
+*  **The dataset contains images where the BP is not present. Our algorithm predicts no pixel values in these cases.**
 
-*  As with all human-labeled data, we do find noise, artifacts, and potential mistakes in the ground truth.
+*  **As with all human-labeled data, we do find noise, artifacts, and potential mistakes in the ground truth.**
 
-*  Identical images do exist in the dataset. Revealed in EDA.
+* ** Identical images do exist in the dataset. Revealed in EDA.**
 
-*  Dataset uses run-length encoding (RLE) on the pixel values.
+*  **Dataset uses run-length encoding (RLE) on the pixel values.**
 
 
 
