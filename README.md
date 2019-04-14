@@ -41,11 +41,11 @@ About the data-
 
 **Approaches we've tried so far**- 
 
-Exploratory Data Analysis - All our training data is in one column, titled pixels.
+**Exploratory Data Analysis** - All our training data is in one column, titled pixels.
 
 train_masks.csv gives the training image masks in run-length encoded format. So, we need to segment this data into something we can plot!
 
-Steps - 
+**Steps - **
 
 1.  Separate run-lengths and pixel locations into seperate lists
 2.  Get number of data points in each image
