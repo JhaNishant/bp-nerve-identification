@@ -1,6 +1,6 @@
 # Eliminating surgical pain
 
-Surgery is not easy for anyone. It brings discomfort and often involves significant post-surgical pain.
+Surgery is not easy for everyone. It brings discomfort and often involves significant post-surgical pain.
 
 Currently, patient pain is frequently managed through the use of **narcotics that bring a bevy of unwanted side effects**.
 
@@ -27,7 +27,18 @@ Important points about dataset:
 *  **Dataset uses run-length encoding (RLE) on the pixel values.**
 
 
+About the data-
+
+**Train.zip** file contains the training set images, named according to subject_imageNum.tif. Every image with the same subject number comes from the same person. This folder also includes binary mask images showing the BP segmentations.
+
+**Test.zip** contains the test set images, named according to imageNum.tif. We predict the BP segmentation for these images. There is no overlap between the subjects in the training and test sets.
+
+
+**Dataset Credits : Qure.ai - Deep learning products that fit your radiology workflow**
+
 
 **Approaches we've tried so far**- 
+
+
 
 
