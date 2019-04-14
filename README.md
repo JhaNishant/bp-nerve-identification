@@ -113,6 +113,8 @@ To clean a predicted mask using this method, you project the cleaned mask on the
 
 **Loss and mask percentage** - I tried using dice coefficient as a loss, but I always got better results by using binary cross-entropy. Lowering the thresholds to get higher number of predicted masks leads to too many false positive.So 49% of the images should have mask and I tried to optimize the threshold on the binary and mask output to get close to 49% predicted masks. 
 
+**Output **
 
+Instead of submitting an exhaustive list of indices for our segmentation, the output is pairs of values that contain a start position and a run length. E.g. '2 5' implies starting at pixel 2 and running a total of 5 pixels (2,3,4,5,6). The metric checks that the pairs are sorted, positive, and the decoded pixel values are not duplicated
 
 
