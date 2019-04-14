@@ -1,6 +1,6 @@
 # Eliminating surgical pain
 
-Surgery is not easy for everyone. It brings discomfort and often involves significant post-surgical pain.
+Surgery is not easy for anyone. It brings discomfort and often involves significant post-surgical pain.
 
 Currently, patient pain is frequently managed through the use of **narcotics that bring a bevy of unwanted side effects**.
 
