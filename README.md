@@ -79,7 +79,6 @@ We spent the most amount of time doing this.
 2.   The models output both a mask and a probability that the image contains a mask
 3.   Use some additional "auxiliary" downsampled mask to train the models
 4.   PCA post-processing to get "realistic" masks
-5.   Binary cross-entropy performs better than dice-like loss
 
 
 I decided to use some deep learning as it works so well on images. We used multiple architectures to try out and all were fully-connected CNN or U-net.
