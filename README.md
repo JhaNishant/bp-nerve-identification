@@ -45,7 +45,7 @@ About the data-
 
 train_masks.csv gives the training image masks in run-length encoded format. So, we need to segment this data into something we can plot!
 
-**Steps - **
+**Steps**
 
 1.  Separate run-lengths and pixel locations into seperate lists
 2.  Get number of data points in each image
